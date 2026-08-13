@@ -7,7 +7,7 @@ export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const overlay = useTransform(scrollYProgress, [0, 1], [0.35, 0.65]);
+  const overlay = useTransform(scrollYProgress, [0, 1], [0.45, 0.7]);
 
   return (
     <section ref={ref} className="relative h-[100svh] w-full overflow-hidden">

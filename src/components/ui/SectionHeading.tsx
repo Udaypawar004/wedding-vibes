@@ -20,7 +20,7 @@ export function SectionHeading({
       {eyebrow ? (
         <p className="eyebrow mb-5 text-muted-foreground">{eyebrow}</p>
       ) : null}
-      <Tag className="text-balance text-4xl leading-[1.05] tracking-tight md:text-6xl">
+      <Tag className="text-balance font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
         {title}
       </Tag>
     </Reveal>

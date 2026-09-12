@@ -15,7 +15,7 @@ export function Intro() {
             celebrations — photographed with restraint, printed to last, and made to be looked at
             fifty years from now.
           </p>
-          <p className="eyebrow mt-8 text-foreground">Since 2016 · 240+ weddings</p>
+          <p className="eyebrow mt-8 text-foreground">Weddings · Ring ceremonies · Films & reels</p>
         </Reveal>
       </div>
     </section>

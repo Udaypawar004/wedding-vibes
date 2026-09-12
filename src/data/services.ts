@@ -1,4 +1,4 @@
-import { images } from "./portfolio";
+import { priyanshuImages, candidImages, ringImages, posters } from "./media.generated";
 
 export interface Service {
   number: string;
@@ -14,31 +14,31 @@ export const services: Service[] = [
     title: "Wedding Stories",
     description:
       "Full-day documentary coverage of your wedding — the rituals, the chaos in the corridors, and the moments nobody planned.",
-    image: images.p1,
-    includes: ["Two photographers", "Full-day coverage", "Curated gallery", "Fine-art album"],
+    image: priyanshuImages[0]!.url,
+    includes: ["Full-day coverage", "Candid and portrait work", "Curated gallery", "Fine-art album"],
   },
   {
     number: "02",
-    title: "Pre-Wedding",
+    title: "Ring Ceremonies",
     description:
-      "An unhurried session in a place that means something to you, shot like a film rather than a photoshoot.",
-    image: images.p2,
-    includes: ["Location scouting", "3–4 hour session", "Wardrobe guidance", "60+ edited frames"],
+      "Intimate coverage of the engagement evening — getting ready, the exchange, and everything around it.",
+    image: ringImages[5]!.url,
+    includes: ["Half-day coverage", "Family portraits", "Curated gallery"],
   },
   {
     number: "03",
-    title: "Engagements & Ceremonies",
+    title: "Candid Coverage",
     description:
-      "Intimate coverage of roka, haldi, mehndi and engagement evenings, with a light footprint and warm, natural light.",
-    image: images.p5,
-    includes: ["Half-day coverage", "Family portraits", "Same-week previews"],
+      "An unobtrusive second eye on the day, working only with available light and never interrupting a ritual.",
+    image: candidImages[0]!.url,
+    includes: ["Documentary approach", "Natural light", "Same-week previews"],
   },
   {
     number: "04",
-    title: "Wedding Films",
+    title: "Wedding Films & Reels",
     description:
-      "A cinematic short film cut from real sound — vows, laughter, music — delivered alongside your photographs.",
-    image: images.p6,
-    includes: ["4K capture", "Live audio", "Highlight film", "Full ceremony edit"],
+      "A cinematic highlight film cut from real sound, plus short vertical reels made for sharing.",
+    image: posters["wedding-highlight"]!.url,
+    includes: ["Highlight film", "Live audio", "Vertical reels", "Delivered with your photographs"],
   },
 ];

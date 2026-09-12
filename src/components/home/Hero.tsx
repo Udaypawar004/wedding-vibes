@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import { priyanshuImages } from "@/data/media.generated";
+
+const hero = priyanshuImages[0]!;
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,10 +14,10 @@ export function Hero() {
   return (
     <section ref={ref} className="relative h-[100svh] w-full overflow-hidden">
       <motion.img
-        src={hero}
-        alt="Bride and groom at golden hour with a flowing red dupatta"
-        width={1920}
-        height={1280}
+        src={hero.url}
+        alt="Bride in a red lehenga and veil, photographed in soft side light"
+        width={hero.width}
+        height={hero.height}
         fetchPriority="high"
         style={{ y }}
         initial={{ scale: 1.15, opacity: 0 }}

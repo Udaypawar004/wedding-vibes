@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/home/Sections";
-import { images } from "@/data/portfolio";
+import { candidPhotos, ringPhotos, priyanshuPhotos } from "@/data/portfolio";
 
 const title = "About | WeddingVibes Wedding Photography";
 const description =
-  "Meet the photographer behind WeddingVibes — a documentary approach to weddings built on patience, presence and natural light.";
+  "WeddingVibes photographs weddings, ring ceremonies and celebrations with a documentary approach built on patience, presence and natural light.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -14,20 +14,22 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: About,
 });
 
+const hero = candidPhotos[5] ?? candidPhotos[0]!;
+const left = ringPhotos[2] ?? ringPhotos[0]!;
+const right = priyanshuPhotos[10] ?? priyanshuPhotos[0]!;
+
 function About() {
   return (
     <>
       <section className="relative h-[70svh] w-full overflow-hidden">
-        <img
-          src={images.p2}
-          alt="Couple walking a misty hillside at dawn"
-          className="h-full w-full object-cover"
-        />
+        <img src={hero.url} alt={hero.alt} className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-[1600px] px-6 pb-14 md:px-10">
@@ -45,15 +47,18 @@ function About() {
               A wedding is the only day your whole family stands in one room.
             </h2>
           </Reveal>
-          <Reveal delay={0.1} className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-5 md:col-start-8">
+          <Reveal
+            delay={0.1}
+            className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-5 md:col-start-8"
+          >
             <p>
-              I'm Aarav Mehra. I picked up a camera at my sister's wedding in 2014 and never really
-              put it down. What began as a favour became a decade of documenting families across
-              Indore, Mumbai, Udaipur and a dozen cities in between.
+              WeddingVibes photographs and films weddings, ring ceremonies and the celebrations
+              around them — quietly, and mostly from the edges of the room.
             </p>
             <p>
-              I photograph quietly. I don't interrupt a ritual to get a better angle, and I'd rather
-              wait ten minutes for a real laugh than direct one into existence.
+              We don't interrupt a ritual to get a better angle, and we'd rather wait ten minutes for
+              a real laugh than direct one into existence. What you see here is real work from real
+              days.
             </p>
           </Reveal>
         </div>
@@ -61,8 +66,12 @@ function About() {
 
       <section className="mx-auto max-w-[1600px] px-6 pb-24 md:px-10">
         <div className="grid gap-8 md:grid-cols-12">
-          <RevealImage src={images.about} alt="Portrait of Aarav Mehra with his camera" className="aspect-[4/5] md:col-span-5" />
-          <RevealImage src={images.p4} alt="Bride laughing with her family" className="aspect-[3/2] self-end md:col-span-6 md:col-start-7" />
+          <RevealImage src={left.url} alt={left.alt} className="aspect-[4/5] md:col-span-5" />
+          <RevealImage
+            src={right.url}
+            alt={right.alt}
+            className="aspect-[3/2] self-end md:col-span-6 md:col-start-7"
+          />
         </div>
       </section>
 
@@ -75,7 +84,7 @@ function About() {
             {[
               {
                 h: "Presence over posing",
-                p: "The best frames happen when nobody is performing. I stay close, stay quiet, and let the day lead.",
+                p: "The best frames happen when nobody is performing. We stay close, stay quiet, and let the day lead.",
               },
               {
                 h: "Light before everything",

@@ -10,9 +10,9 @@ import {
   ContactCTA,
 } from "@/components/home/Sections";
 
-const title = "WeddingVibes | Wedding Photography Studio";
+const title = "WeddingVibes | Wedding Photographer in Betul, Madhya Pradesh";
 const description =
-  "Documentary wedding photography capturing authentic stories, emotions and unforgettable moments across India and beyond.";
+  "WeddingVibes — professional wedding photographer based in Betul, MP. Covering weddings, ring ceremonies and pre-wedding shoots across Betul, Bhopal, Nagpur and Madhya Pradesh.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

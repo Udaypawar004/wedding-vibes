@@ -4,9 +4,9 @@ import { MasonryGallery } from "@/components/portfolio/MasonryGallery";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactCTA } from "@/components/home/Sections";
 
-const title = "Gallery | WeddingVibes Wedding Photography";
+const title = "Gallery | Wedding Photography Gallery Betul MP | WeddingVibes";
 const description =
-  "A curated gallery of candid wedding moments, details, portraits and celebrations by WeddingVibes.";
+  "Browse candid wedding moments, portraits and celebrations photographed by WeddingVibes in Betul, Madhya Pradesh and across India.";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({

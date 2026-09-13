@@ -4,9 +4,9 @@ import { ContactCTA } from "@/components/home/Sections";
 import { candidPhotos, ringPhotos, priyanshuPhotos } from "@/data/portfolio";
 import aboutBackImage from "@/assets/aboutBack.jpg";
 
-const title = "About | WeddingVibes Wedding Photography";
+const title = "About | WeddingVibes — Wedding Photographer in Betul, MP";
 const description =
-  "WeddingVibes photographs weddings, ring ceremonies and celebrations with a documentary approach built on patience, presence and natural light.";
+  "WeddingVibes is a documentary wedding photographer based in Betul, Madhya Pradesh — photographing weddings, ring ceremonies and celebrations with patience, presence and natural light.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

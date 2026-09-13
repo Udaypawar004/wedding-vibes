@@ -5,9 +5,9 @@ import { Mail, Phone, Instagram, MapPin } from "lucide-react";
 import { site } from "@/data/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const title = "Contact | WeddingVibes Wedding Photography";
+const title = "Contact | Book a Wedding Photographer in Betul MP | WeddingVibes";
 const description =
-  "Planning something beautiful? Share your date and venue and we'll get back to you within two days.";
+  "Planning a wedding in Betul or Madhya Pradesh? Get in touch with WeddingVibes to check availability and book your date.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

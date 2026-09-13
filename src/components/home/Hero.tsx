@@ -4,6 +4,9 @@ import { ArrowDown } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import heroMobileImg from "@/assets/heroMobile.jpg";
 
+const heroDesktopSrcSet = `${heroImg} 1920w, ${heroImg} 1280w`;
+const heroMobileSrcSet = `${heroMobileImg} 637w`;
+
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -13,12 +16,17 @@ export function Hero() {
   return (
     <section ref={ref} className="relative h-[100svh] w-full overflow-hidden">
       <picture className="absolute inset-0">
-        <source media="(max-width: 767px)" srcSet={heroMobileImg} />
+        <source media="(max-width: 767px)" srcSet={heroMobileSrcSet} sizes="100vw" type="image/jpeg" />
+        <source media="(min-width: 768px)" srcSet={heroDesktopSrcSet} sizes="100vw" type="image/jpeg" />
         <motion.img
           src={heroImg}
+          srcSet={heroDesktopSrcSet}
+          sizes="100vw"
           alt="Bride in a red lehenga and veil, photographed in soft side light"
           width={1920}
-          height={1080}
+          height={1280}
+          loading="eager"
+          decoding="async"
           fetchPriority="high"
           style={{ y }}
           initial={{ scale: 1.15, opacity: 0 }}

@@ -14,6 +14,39 @@ import { motion } from "motion/react";
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { site } from "@/data/site";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": site.url,
+  name: site.name,
+  description:
+    "Professional wedding photographer based in Betul, Madhya Pradesh. Covering weddings, ring ceremonies and pre-wedding shoots across MP and India.",
+  url: site.url,
+  telephone: site.phone,
+  email: site.email,
+  image: `${site.url}/og-image.jpg`,
+  priceRange: "₹₹",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.city,
+    addressRegion: site.state,
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 21.9,
+    longitude: 77.9,
+  },
+  areaServed: [
+    { "@type": "City", name: "Betul" },
+    { "@type": "City", name: "Bhopal" },
+    { "@type": "City", name: "Nagpur" },
+    { "@type": "State", name: "Madhya Pradesh" },
+  ],
+  sameAs: [site.instagram],
+};
 
 function NotFoundComponent() {
   return (
@@ -77,11 +110,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "WeddingVibes" },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "IN-MP" },
+      { name: "geo.placename", content: "Betul, Madhya Pradesh" },
+      { name: "geo.position", content: "21.9;77.9" },
+      { name: "ICBM", content: "21.9, 77.9" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "WeddingVibes" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@weddingvibes" },
+      { name: "google-site-verification", content: "HDyVEDDkXP3NZICN7zgji2uuGM6bZA1aN1NaT7LhoNw" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: site.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -89,6 +132,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@200;300;400;500&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(jsonLd),
+      },
     ],
   }),
   shellComponent: RootShell,

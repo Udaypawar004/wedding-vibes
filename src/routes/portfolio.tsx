@@ -9,9 +9,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/home/Sections";
 
-const title = "Portfolio | WeddingVibes Wedding Photography";
+const title = "Portfolio | Wedding Photographer in Betul MP | WeddingVibes";
 const description =
-  "Wedding stories, ring ceremonies, candid coverage, films and reels photographed by WeddingVibes.";
+  "Wedding photography portfolio by WeddingVibes, Betul. Browse wedding stories, ring ceremonies, candid coverage, films and reels from across Madhya Pradesh.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

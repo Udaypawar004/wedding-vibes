@@ -4,9 +4,9 @@ import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactCTA } from "@/components/home/Sections";
 
-const title = "Services | WeddingVibes Wedding Photography";
+const title = "Services | Wedding Photography Packages Betul MP | WeddingVibes";
 const description =
-  "Wedding stories, pre-wedding sessions, engagements and cinematic wedding films by WeddingVibes.";
+  "Wedding photography and film packages by WeddingVibes, Betul. Full-day wedding coverage, pre-wedding shoots, engagement sessions and cinematic wedding films across Madhya Pradesh.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

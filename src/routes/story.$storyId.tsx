@@ -14,9 +14,7 @@ export const Route = createFileRoute("/story/$storyId")({
   },
   head: ({ loaderData }) => {
     const story = loaderData?.story;
-    const title = story
-      ? `${story.title} | WeddingVibes`
-      : "Story | WeddingVibes";
+    const title = story ? `${story.title} | WeddingVibes` : "Story | WeddingVibes";
     const description = story?.intro ?? "A wedding story photographed by WeddingVibes.";
     return {
       meta: [
@@ -66,9 +64,7 @@ function StoryPage() {
         </Reveal>
 
         <div className="mt-16">
-          <MasonryGallery
-            items={story.images.map((p) => ({ src: p.url, alt: p.alt }))}
-          />
+          <MasonryGallery items={story.images.map((p) => ({ src: p.url, alt: p.alt }))} />
         </div>
 
         {videos.length > 0 && (

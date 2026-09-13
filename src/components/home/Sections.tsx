@@ -5,27 +5,38 @@ import { LinkButton } from "@/components/ui/LinkButton";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { galleryImages } from "@/data/gallery";
-import { priyanshuPhotos } from "@/data/portfolio";
+import aboutImage from "@/assets/About.png";
+
+const selectedFrames = [
+  galleryImages[16] ?? galleryImages[0],
+  galleryImages[36] ?? galleryImages[1],
+  galleryImages[13] ?? galleryImages[2],
+  galleryImages[22] ?? galleryImages[3],
+].filter(Boolean) as typeof galleryImages;
+
+const instagramFrames = [
+  galleryImages[5] ?? galleryImages[0],
+  galleryImages[18] ?? galleryImages[2],
+  galleryImages[30] ?? galleryImages[4],
+  galleryImages[4] ?? galleryImages[1],
+  galleryImages[16] ?? galleryImages[3],
+  galleryImages[33] ?? galleryImages[5],
+].filter(Boolean) as typeof galleryImages;
 
 export function AboutPreview() {
-  const img = priyanshuPhotos[3] ?? priyanshuPhotos[0]!;
   return (
     <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
       <div className="grid items-center gap-12 md:grid-cols-12">
-        <RevealImage
-          src={img.url}
-          alt={img.alt}
-          className="aspect-[4/5] md:col-span-5"
-        />
+        <RevealImage src={aboutImage} alt="WeddingVibes about image" className="aspect-[4/5] md:col-span-5" />
         <Reveal className="md:col-span-6 md:col-start-7">
           <p className="eyebrow mb-6 text-muted-foreground">Behind the camera</p>
           <h2 className="text-balance font-serif text-4xl leading-tight tracking-tight md:text-5xl">
             Weddings photographed the way they deserve to be remembered.
           </h2>
           <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-            WeddingVibes works from the edges of the room — waiting for the glance, the laugh,
-            the moment nobody planned. No posing marathons, no forced smiles. Just presence,
-            patience, and light.
+            WeddingVibes works from the edges of the room — waiting for the glance, the laugh, the
+            moment nobody planned. No posing marathons, no forced smiles. Just presence, patience,
+            and light.
           </p>
           <Link to="/about" className="eyebrow link-underline mt-10 inline-block">
             Read the full story
@@ -72,12 +83,15 @@ export function SelectedGallery() {
     <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
       <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <h2 className="font-serif text-4xl tracking-tight md:text-6xl">Selected frames</h2>
-        <Link to="/gallery" className="eyebrow link-underline text-muted-foreground hover:text-foreground">
+        <Link
+          to="/gallery"
+          className="eyebrow link-underline text-muted-foreground hover:text-foreground"
+        >
           Enter the gallery
         </Link>
       </Reveal>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {galleryImages.slice(0, 4).map((img, i) => (
+        {selectedFrames.map((img, i) => (
           <RevealImage
             key={img.src + i}
             src={img.src}
@@ -105,8 +119,14 @@ export function SocialStrip() {
         </a>
       </Reveal>
       <div className="grid grid-cols-3 gap-2 md:grid-cols-6">
-        {galleryImages.slice(0, 6).map((img, i) => (
-          <a key={img.src + i} href={site.instagram} target="_blank" rel="noreferrer" className="group block aspect-square overflow-hidden">
+        {instagramFrames.map((img, i) => (
+          <a
+            key={img.src + i}
+            href={site.instagram}
+            target="_blank"
+            rel="noreferrer"
+            className="group block aspect-square overflow-hidden"
+          >
             <img
               src={img.src}
               alt={img.alt}

@@ -149,7 +149,9 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    transition: background-color 300ms ease, color 300ms ease;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
   }
 }
 

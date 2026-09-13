@@ -26,7 +26,10 @@ export function Footer() {
             <ul className="space-y-3">
               {nav.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="eyebrow link-underline text-muted-foreground hover:text-foreground">
+                  <Link
+                    to={l.to}
+                    className="eyebrow link-underline text-muted-foreground hover:text-foreground"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -36,22 +39,38 @@ export function Footer() {
 
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 hover:text-foreground">
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-3 hover:text-foreground"
+              >
                 <Mail size={15} strokeWidth={1.2} /> {site.email}
               </a>
             </li>
             <li>
-              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-3 hover:text-foreground">
+              <a
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className="inline-flex items-center gap-3 hover:text-foreground"
+              >
                 <Phone size={15} strokeWidth={1.2} /> {site.phone}
               </a>
             </li>
             <li>
-              <a href={site.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 hover:text-foreground">
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 hover:text-foreground"
+              >
                 <Instagram size={15} strokeWidth={1.2} /> Instagram
               </a>
             </li>
             <li>
-              <a href={site.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 hover:text-foreground">
+              <a
+                href={site.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 hover:text-foreground"
+              >
                 <Facebook size={15} strokeWidth={1.2} /> Facebook
               </a>
             </li>
@@ -62,7 +81,9 @@ export function Footer() {
           aria-hidden="true"
           className="mt-20 font-serif text-[15vw] leading-[0.85] tracking-tight text-foreground/10 md:text-[11vw]"
         >
-          Your story.<br />Our frame.
+          Your story.
+          <br />
+          Our frame.
         </p>
 
         <div className="mt-12 flex flex-col justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">

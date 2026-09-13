@@ -38,7 +38,9 @@ function Services() {
               alt={`${s.title} photography by WeddingVibes`}
               className={`aspect-[4/3] md:col-span-6 ${i % 2 ? "md:order-2 md:col-start-7" : ""}`}
             />
-            <Reveal className={`md:col-span-5 ${i % 2 ? "md:order-1 md:col-start-1" : "md:col-start-8"}`}>
+            <Reveal
+              className={`md:col-span-5 ${i % 2 ? "md:order-1 md:col-start-1" : "md:col-start-8"}`}
+            >
               <p className="eyebrow text-muted-foreground">{s.number}</p>
               <h2 className="mt-4 font-serif text-3xl tracking-tight md:text-5xl">{s.title}</h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">

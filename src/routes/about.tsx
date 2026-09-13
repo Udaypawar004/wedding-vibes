@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/home/Sections";
 import { candidPhotos, ringPhotos, priyanshuPhotos } from "@/data/portfolio";
+import aboutBackImage from "@/assets/aboutBack.jpg";
 
 const title = "About | WeddingVibes Wedding Photography";
 const description =
@@ -21,7 +22,6 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const hero = candidPhotos[5] ?? candidPhotos[0]!;
 const left = ringPhotos[2] ?? ringPhotos[0]!;
 const right = priyanshuPhotos[10] ?? priyanshuPhotos[0]!;
 
@@ -29,7 +29,11 @@ function About() {
   return (
     <>
       <section className="relative h-[70svh] w-full overflow-hidden">
-        <img src={hero.url} alt={hero.alt} className="h-full w-full object-cover" />
+        <img
+          src={aboutBackImage}
+          alt="WeddingVibes photography studio about image"
+          className="h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-foreground/35" />
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-[1600px] px-6 pb-14 md:px-10">
@@ -56,9 +60,9 @@ function About() {
               around them — quietly, and mostly from the edges of the room.
             </p>
             <p>
-              We don't interrupt a ritual to get a better angle, and we'd rather wait ten minutes for
-              a real laugh than direct one into existence. What you see here is real work from real
-              days.
+              We don't interrupt a ritual to get a better angle, and we'd rather wait ten minutes
+              for a real laugh than direct one into existence. What you see here is real work from
+              real days.
             </p>
           </Reveal>
         </div>

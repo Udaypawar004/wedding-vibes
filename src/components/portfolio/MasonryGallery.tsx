@@ -45,7 +45,12 @@ export function MasonryGallery({ items }: { items: GalleryItem[] }) {
         ))}
       </div>
 
-      <Lightbox images={items} index={index} onClose={() => setIndex(null)} onIndexChange={setIndex} />
+      <Lightbox
+        images={items}
+        index={index}
+        onClose={() => setIndex(null)}
+        onIndexChange={setIndex}
+      />
     </>
   );
 }

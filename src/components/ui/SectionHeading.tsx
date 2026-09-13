@@ -17,9 +17,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <Reveal className={`${align === "center" ? "text-center" : ""} ${className}`}>
-      {eyebrow ? (
-        <p className="eyebrow mb-5 text-muted-foreground">{eyebrow}</p>
-      ) : null}
+      {eyebrow ? <p className="eyebrow mb-5 text-muted-foreground">{eyebrow}</p> : null}
       <Tag className="text-balance font-serif text-4xl leading-[1.05] tracking-tight md:text-6xl">
         {title}
       </Tag>

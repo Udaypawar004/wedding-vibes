@@ -58,7 +58,17 @@ function Contact() {
     if (!form.message.trim()) next.message = "A few words about your day help us reply properly.";
     setErrors(next);
     if (Object.keys(next).length > 0) return;
+
     setSent(true);
+
+    if (typeof window !== "undefined") {
+      const mailto = `mailto:${site.email}?subject=${encodeURIComponent(
+        `${form.eventType} enquiry — ${form.name}`,
+      )}&body=${encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nEvent: ${form.eventType}\nDate: ${form.eventDate}\n\n${form.message}`,
+      )}`;
+      window.location.href = mailto;
+    }
   };
 
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent(

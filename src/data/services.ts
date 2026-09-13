@@ -15,7 +15,12 @@ export const services: Service[] = [
     description:
       "Full-day documentary coverage of your wedding — the rituals, the chaos in the corridors, and the moments nobody planned.",
     image: priyanshuImages[0]!.url,
-    includes: ["Full-day coverage", "Candid and portrait work", "Curated gallery", "Fine-art album"],
+    includes: [
+      "Full-day coverage",
+      "Candid and portrait work",
+      "Curated gallery",
+      "Fine-art album",
+    ],
   },
   {
     number: "02",

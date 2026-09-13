@@ -4,8 +4,6 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
-
 const links = [
   { to: "/portfolio", label: "Work" },
   { to: "/gallery", label: "Gallery" },
@@ -30,6 +28,8 @@ export function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   const transparent = overHero && !scrolled;
+  const navTextClass = transparent ? "text-on-photo" : "text-foreground";
+  const mobileMenuClass = transparent ? "bg-[#0f0f0f] text-on-photo" : "bg-background text-foreground";
 
   return (
     <header
@@ -43,7 +43,7 @@ export function Navbar() {
         aria-label="Main"
         className={`mx-auto flex max-w-[1600px] items-center justify-between px-6 transition-all duration-500 md:px-10 ${
           scrolled ? "h-16" : "h-20"
-        } ${transparent ? "text-on-photo" : "text-foreground"}`}
+        } ${navTextClass}`}
       >
         <Link to="/" className="eyebrow text-sm tracking-[0.34em]">
           WEDDINGVIBES
@@ -63,11 +63,9 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <ThemeToggle overPhoto={transparent} />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle overPhoto={transparent} />
           <Button
             type="button"
             variant="ghost"
@@ -76,13 +74,13 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className={`rounded-full ${transparent ? "hover:bg-on-photo/15 hover:text-on-photo" : ""}`}
+            className={`rounded-full ${transparent ? "text-on-photo hover:bg-on-photo/15 hover:text-on-photo" : "text-foreground hover:bg-foreground/5"}`}
           >
             {open ? <X size={22} strokeWidth={1.2} /> : <Menu size={22} strokeWidth={1.2} />}
           </Button>
         </div>
       </nav>
-
+ 
       <AnimatePresence>
         {open && (
           <motion.div
@@ -91,7 +89,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden bg-background md:hidden"
+            className={`overflow-hidden md:hidden ${mobileMenuClass}`}
           >
             <ul className="flex flex-col gap-1 px-6 pb-8 pt-2">
               {links.map((l, i) => (
@@ -103,7 +101,9 @@ export function Navbar() {
                 >
                   <Link
                     to={l.to}
-                    className="block border-b border-border py-4 font-serif text-3xl text-foreground"
+                    className={`block border-b py-4 font-serif text-3xl ${
+                      transparent ? "border-white/10 text-on-photo" : "border-border text-foreground"
+                    }`}
                   >
                     {l.label}
                   </Link>

@@ -44,7 +44,11 @@ function Portfolio() {
       <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-36 md:px-10 md:pt-48">
         <SectionHeading as="h1" eyebrow="The work" title="Stories, in frames" />
 
-        <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3" role="group" aria-label="Filter by category">
+        <div
+          className="mt-14 flex flex-wrap gap-x-8 gap-y-3"
+          role="group"
+          aria-label="Filter by category"
+        >
           {categories.map((c) => (
             <button
               key={c}
@@ -73,7 +77,9 @@ function Portfolio() {
                 <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-4">
                   <div>
                     <p className="eyebrow mb-3 text-muted-foreground">{story.category}</p>
-                    <h2 className="font-serif text-3xl tracking-tight md:text-5xl">{story.title}</h2>
+                    <h2 className="font-serif text-3xl tracking-tight md:text-5xl">
+                      {story.title}
+                    </h2>
                   </div>
                   <Link
                     to="/story/$storyId"

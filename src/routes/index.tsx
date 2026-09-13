@@ -6,7 +6,6 @@ import {
   AboutPreview,
   ServicesPreview,
   SelectedGallery,
-  Testimonials,
   SocialStrip,
   ContactCTA,
 } from "@/components/home/Sections";
@@ -36,7 +35,6 @@ function Home() {
       <AboutPreview />
       <ServicesPreview />
       <SelectedGallery />
-      <Testimonials />
       <SocialStrip />
       <ContactCTA />
     </>

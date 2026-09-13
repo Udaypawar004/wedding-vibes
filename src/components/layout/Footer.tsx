@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
-import { site } from "@/data/testimonials";
+import { site } from "@/data/site";
 
 const nav = [
   { to: "/portfolio", label: "Work" },

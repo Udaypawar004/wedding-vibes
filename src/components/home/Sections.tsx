@@ -3,28 +3,29 @@ import { Instagram } from "lucide-react";
 import { Reveal, RevealImage } from "@/components/ui/Reveal";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { services } from "@/data/services";
-import { testimonials, site } from "@/data/testimonials";
+import { site } from "@/data/site";
 import { galleryImages } from "@/data/gallery";
-import aboutImg from "@/assets/about.jpg";
+import { priyanshuPhotos } from "@/data/portfolio";
 
 export function AboutPreview() {
+  const img = priyanshuPhotos[3] ?? priyanshuPhotos[0]!;
   return (
     <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
       <div className="grid items-center gap-12 md:grid-cols-12">
         <RevealImage
-          src={aboutImg}
-          alt="Portrait of the WeddingVibes photographer at work"
+          src={img.url}
+          alt={img.alt}
           className="aspect-[4/5] md:col-span-5"
         />
         <Reveal className="md:col-span-6 md:col-start-7">
-          <p className="eyebrow mb-6 text-muted-foreground">The photographer</p>
+          <p className="eyebrow mb-6 text-muted-foreground">Behind the camera</p>
           <h2 className="text-balance font-serif text-4xl leading-tight tracking-tight md:text-5xl">
-            I photograph weddings the way I'd want mine remembered.
+            Weddings photographed the way they deserve to be remembered.
           </h2>
           <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-            I'm Aarav, and I've spent the last decade in the corners of wedding halls, waiting for
-            the glance between a mother and her daughter. No posing marathons, no forced smiles —
-            just presence, patience, and light.
+            WeddingVibes works from the edges of the room — waiting for the glance, the laugh,
+            the moment nobody planned. No posing marathons, no forced smiles. Just presence,
+            patience, and light.
           </p>
           <Link to="/about" className="eyebrow link-underline mt-10 inline-block">
             Read the full story
@@ -84,30 +85,6 @@ export function SelectedGallery() {
             className={i % 2 === 0 ? "aspect-[3/4]" : "aspect-[3/4] md:mt-12"}
           />
         ))}
-      </div>
-    </section>
-  );
-}
-
-export function Testimonials() {
-  return (
-    <section className="border-y border-border">
-      <div className="mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
-        <Reveal>
-          <p className="eyebrow mb-12 text-muted-foreground">Kind words</p>
-        </Reveal>
-        <div className="space-y-20">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.author} delay={i * 0.08}>
-              <blockquote className="text-balance font-serif text-2xl italic leading-snug md:text-4xl">
-                “{t.quote}”
-              </blockquote>
-              <p className="eyebrow mt-6 text-muted-foreground">
-                {t.author} · {t.location}
-              </p>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

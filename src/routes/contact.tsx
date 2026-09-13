@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, Phone, Instagram, MapPin } from "lucide-react";
-import { site } from "@/data/testimonials";
+import { site } from "@/data/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const title = "Contact | WeddingVibes Wedding Photography";

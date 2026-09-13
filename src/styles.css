@@ -24,6 +24,7 @@
   --color-ivory: var(--ivory);
   --color-ink: var(--ink);
   --color-gold: var(--gold);
+  --color-on-photo: var(--on-photo);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -69,6 +70,7 @@
 
 :root {
   --radius: 0.625rem;
+  --on-photo: oklch(0.97 0.01 85);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -104,6 +106,7 @@
 }
 
 .dark {
+  --on-photo: oklch(0.97 0.01 85);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -146,5 +149,12 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
   }
 }

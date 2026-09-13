@@ -3,6 +3,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+
 const links = [
   { to: "/portfolio", label: "Work" },
   { to: "/gallery", label: "Gallery" },
@@ -40,36 +43,44 @@ export function Navbar() {
         aria-label="Main"
         className={`mx-auto flex max-w-[1600px] items-center justify-between px-6 transition-all duration-500 md:px-10 ${
           scrolled ? "h-16" : "h-20"
-        } ${transparent ? "text-background" : "text-foreground"}`}
+        } ${transparent ? "text-on-photo" : "text-foreground"}`}
       >
         <Link to="/" className="eyebrow text-sm tracking-[0.34em]">
           WEDDINGVIBES
         </Link>
 
-        <ul className="hidden items-center gap-10 md:flex">
-          {links.map((l) => (
-            <li key={l.to}>
-              <Link
-                to={l.to}
-                className="eyebrow link-underline opacity-80 transition-opacity hover:opacity-100"
-                activeProps={{ className: "eyebrow link-underline opacity-100 text-accent" }}
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-8 md:flex">
+          <ul className="flex items-center gap-10">
+            {links.map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="eyebrow link-underline opacity-80 transition-opacity hover:opacity-100"
+                  activeProps={{ className: "eyebrow link-underline opacity-100 text-accent" }}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle overPhoto={transparent} />
+        </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="md:hidden"
-        >
-          {open ? <X size={22} strokeWidth={1.2} /> : <Menu size={22} strokeWidth={1.2} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle overPhoto={transparent} />
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className={`rounded-full ${transparent ? "hover:bg-on-photo/15 hover:text-on-photo" : ""}`}
+          >
+            {open ? <X size={22} strokeWidth={1.2} /> : <Menu size={22} strokeWidth={1.2} />}
+          </Button>
+        </div>
       </nav>
 
       <AnimatePresence>

@@ -84,16 +84,6 @@ const ringPhotos = ringImages.map((img, i) =>
 
 export const stories: Story[] = [
   {
-    id: "priyanshu",
-    title: "Priyanshu",
-    subtitle: "Wedding Story",
-    category: "Weddings",
-    intro:
-      "A celebration of love, family and the moments that pass too quickly — photographed from the quiet of the getting-ready room to the last of the evening light.",
-    cover: priyanshuPhotos[0]!,
-    images: priyanshuPhotos,
-  },
-  {
     id: "ring-ceremony",
     title: "Ring Ceremony",
     subtitle: "A celebration before forever",
@@ -103,6 +93,16 @@ export const stories: Story[] = [
     cover: ringPhotos[5] ?? ringPhotos[0]!,
     images: ringPhotos,
     videoIds: ["ring-ceremony-highlight"],
+  },
+  {
+    id: "wedding",
+    title: "Wedding",
+    subtitle: "Wedding Story",
+    category: "Weddings",
+    intro:
+      "A celebration of love, family and the moments that pass too quickly — photographed from the quiet of the getting-ready room to the last of the evening light.",
+    cover: priyanshuPhotos[0]!,
+    images: priyanshuPhotos,
   },
   {
     id: "candid-moments",

@@ -37,6 +37,7 @@ export function BlurImage({
   alt,
   className = "",
   imgClassName = "",
+  loadingClassName = "",
   sizes,
   priority = false,
   width,
@@ -46,6 +47,7 @@ export function BlurImage({
   alt: string;
   className?: string;
   imgClassName?: string;
+  loadingClassName?: string;
   sizes?: string;
   priority?: boolean;
   width?: number;
@@ -64,6 +66,9 @@ export function BlurImage({
           loaded ? "opacity-0" : "opacity-100"
         }`}
       />
+      {loadingClassName && !loaded ? (
+        <div aria-hidden="true" className={`absolute inset-0 ${loadingClassName}`} />
+      ) : null}
       <img
         src={src}
         srcSet={buildSrcSet(src)}
@@ -109,6 +114,7 @@ interface RevealImageProps {
   alt: string;
   className?: string;
   imgClassName?: string;
+  loadingClassName?: string;
   priority?: boolean;
 }
 
@@ -117,6 +123,7 @@ export function RevealImage({
   alt,
   className = "",
   imgClassName = "",
+  loadingClassName = "",
   priority = false,
 }: RevealImageProps) {
   return (
@@ -128,6 +135,7 @@ export function RevealImage({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="h-full w-full"
         imgClassName={imgClassName}
+        loadingClassName={loadingClassName}
       />
     </div>
   );

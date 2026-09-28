@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { Reveal, RevealImage } from "@/components/ui/Reveal";
+import { Reveal, RevealImage, BlurImage } from "@/components/ui/Reveal";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
@@ -127,12 +127,12 @@ export function SocialStrip() {
             rel="noreferrer"
             className="group block aspect-square overflow-hidden"
           >
-            <img
+            <BlurImage
               src={img.src}
               alt={img.alt}
-              loading="lazy"
-              decoding="async"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 16vw"
+              className="h-full w-full"
+              imgClassName="transition-transform duration-700 group-hover:scale-105"
             />
           </a>
         ))}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { BlurImage } from "@/components/ui/Reveal";
 import { Lightbox } from "./Lightbox";
 
 export interface GalleryItem {
@@ -27,12 +28,12 @@ export function MasonryGallery({ items }: { items: GalleryItem[] }) {
             className="group relative block w-full overflow-hidden break-inside-avoid text-left"
             aria-label={`Open image: ${item.alt}`}
           >
-            <img
+            <BlurImage
               src={item.src}
               alt={item.alt}
-              loading="lazy"
-              decoding="async"
-              className="w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="w-full"
+              imgClassName="transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
             />
             <span className="pointer-events-none absolute inset-0 bg-foreground/0 transition-colors duration-500 group-hover:bg-foreground/20" />
             {item.caption ? (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Play } from "lucide-react";
 import type { VideoItem } from "@/data/media";
+import { BlurImage } from "@/components/ui/Reveal";
 import { VideoPlayerModal } from "./VideoPlayerModal";
 
 export function VideoGrid({ videos }: { videos: VideoItem[] }) {
@@ -33,12 +34,12 @@ export function VideoGrid({ videos }: { videos: VideoItem[] }) {
                 video.orientation === "portrait" ? "aspect-[9/16]" : "aspect-video"
               }`}
             >
-              <img
+              <BlurImage
                 src={video.poster.url}
                 alt={`${video.title} — still frame`}
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="h-full w-full"
+                imgClassName="transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
               />
               <span className="absolute inset-0 bg-foreground/25 transition-colors duration-500 group-hover:bg-foreground/10" />
               <span className="absolute inset-0 flex items-center justify-center">

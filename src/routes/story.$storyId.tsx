@@ -3,7 +3,7 @@ import { findStory, stories } from "@/data/portfolio";
 import { findVideo } from "@/data/videos";
 import { MasonryGallery } from "@/components/portfolio/MasonryGallery";
 import { VideoGrid } from "@/components/portfolio/VideoGrid";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, BlurImage } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/home/Sections";
 
 export const Route = createFileRoute("/story/$storyId")({
@@ -38,13 +38,14 @@ function StoryPage() {
   return (
     <>
       <section className="relative h-[80svh] w-full overflow-hidden">
-        <img
+        <BlurImage
           src={story.cover.url}
           alt={story.cover.alt}
           width={story.cover.width}
           height={story.cover.height}
-          fetchPriority="high"
-          className="h-full w-full object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, 80vw"
+          className="h-full w-full"
         />
         <div className="absolute inset-0 bg-foreground/40" />
         <div className="absolute inset-0 flex items-end">

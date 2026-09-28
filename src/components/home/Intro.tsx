@@ -6,7 +6,7 @@ export function Intro() {
       <div className="grid gap-12 md:grid-cols-12">
         <Reveal className="md:col-span-7">
           <h2 className="text-balance font-serif text-4xl leading-[1.06] tracking-tight md:text-7xl">
-            We capture the moments <em className="text-accent">you feel</em>.
+            We capture the moments <em className="text-gray-300">you feel</em>.
           </h2>
         </Reveal>
         <Reveal delay={0.15} className="md:col-span-4 md:col-start-9 md:pt-4">
